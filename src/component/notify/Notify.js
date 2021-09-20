@@ -2,6 +2,9 @@ import Button from "@restart/ui/esm/Button";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./Notify.css";
+
+
+
 const Notify = (props) => {
   const [devise, setDevise] = useState([]);
 
@@ -9,7 +12,7 @@ const Notify = (props) => {
     name: "omar faruk",
     email: "ronymaha@gmail.com",
     repoUrl: "https://github.com/zoha1985/ActiveDeviseCircleLoginsystem.git",
-    message: "This is a nice and awesome project",
+    message: "This is a nice and awesome project"
   };
 
 
@@ -24,13 +27,18 @@ const Notify = (props) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        'Authorization': "Bearer NULL"
       },
       body: JSON.stringify(config),
     };
     let url = "http://35.201.2.209:8000/notify";
     fetch(url, requestOptions)
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((res) => {
+        console.log('response: ', res)
+      })
+      .then((data) => {
+        console.log('notify data: ', data)
+      });
   };
 
 
@@ -60,10 +68,10 @@ const Notify = (props) => {
         <Row className=" mt-5 ">
           <Col className=" p-0 ">
             <div className="circle-container text-center">
-              <span className="counter fs-2 text-light">2</span>
+              <span className="counter fs-2 text-light">{devise.length}</span>
               <ul>
                 {devise.map((devise, index) => (
-                  <li>
+                  <li key={index}>
                     <span className="spanvalue">{index}</span>
                   </li>
                 ))}

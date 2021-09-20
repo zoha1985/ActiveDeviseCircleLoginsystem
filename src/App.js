@@ -7,8 +7,6 @@ import {
   Link
 } from "react-router-dom";
 import './App.css';
-import { Button } from 'react-bootstrap';
-import Header from './component/header/Login';
 import Notify from './component/notify/Notify';
 import React, { Component, history } from 'react';
 import Login from './component/header/Login';
@@ -33,11 +31,12 @@ class App extends Component{
     };
     fetch('http://35.201.2.209:8000/login', requestOptions)
         .then(response => {
+          console.log('login response: ', response);
             if(response.status === 200) {
                 localStorage.setItem('user_login', true)
                 this.setState({login:true})
             }
-        })    
+        })  
   }
 
   inputHandler = (e) =>{

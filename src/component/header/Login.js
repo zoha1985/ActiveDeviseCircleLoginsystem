@@ -5,9 +5,8 @@ import { faEnvelope,faUnlock} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '@restart/ui/esm/Button';
 
-
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+
 
 class Login extends Component {
     constructor(props) {
