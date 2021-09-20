@@ -8,7 +8,7 @@ const Notify = (props) => {
   const config = {
     name: "omar faruk",
     email: "ronymaha@gmail.com",
-    repoUrl: "",
+    repoUrl: "https://github.com/zoha1985/ActiveDeviseCircleLoginsystem.git",
     message: "This is a nice and awesome project",
   };
 
